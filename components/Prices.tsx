@@ -18,7 +18,7 @@ export default function Prices() {
                 Monthly plan
               </h2>
               <h1 className="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">
-                <span>$30</span>
+                <span>$20</span>
                 <span className="text-lg ml-1 font-normal text-gray-500">
                   /mo
                 </span>
@@ -97,7 +97,7 @@ export default function Prices() {
                 Annual plan
               </h2>
               <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                <span>$15</span>
+                <span>$10</span>
                 <span className="text-lg ml-1 font-normal text-gray-500">
                   /mo
                 </span>
