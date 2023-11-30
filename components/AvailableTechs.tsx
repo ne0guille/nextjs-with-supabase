@@ -11,19 +11,39 @@ export default function AvailableTechs() {
           <div className="container-sm">
             <ul className="list-reset mb-0">
               <li>
-                <img width="100" height="40" src="/angular_renaissance.png" />
+                <img
+                  className="logo"
+                  width="80"
+                  height="80"
+                  src="/angular_renaissance.png"
+                />
               </li>
               <li>
-                <img width="100" height="40" src="/react-2.svg" />
+                <img
+                  className="logo"
+                  width="80"
+                  height="80"
+                  src="/react-2.svg"
+                />
               </li>
               <li>
-                <img width="100" height="40" src="/vue-9.svg" />
+                <img className="logo" width="80" height="80" src="/vue-9.svg" />
               </li>
               <li>
-                <img width="100" height="40" src="/nextjs-2.svg" />
+                <img
+                  className="logo"
+                  width="80"
+                  height="80"
+                  src="/nextjs-2.svg"
+                />
               </li>
               <li>
-                <img width="100" height="40" src="/nuxt-2.svg" />
+                <img
+                  className="logo"
+                  width="80"
+                  height="80"
+                  src="/nuxt-2.svg"
+                />
               </li>
             </ul>
           </div>
