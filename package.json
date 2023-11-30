@@ -11,6 +11,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
+    "@vercel/analytics": "^1.1.1",
     "autoprefixer": "10.4.15",
     "geist": "^1.0.0",
     "next": "latest",

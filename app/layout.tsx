@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -26,6 +27,7 @@ export default function RootLayout({
         <div className="body-wrap ">
           <main className="min-h-screen flex flex-col items-center">
             {children}
+            <Analytics />
           </main>
         </div>
       </body>
