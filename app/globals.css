@@ -40,3 +40,35 @@
     transform: translateY(0);
   }
 }
+
+.boxed-container {
+  @apply max-w-4xl mx-auto px-4;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-shadow: 0 16px 48px #e3e7eb;
+}
+
+.is-boxed {
+  background: #f6f8fa;
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 1440px;
+  height: 400px;
+  background: #0f8a9d;
+  background: linear-gradient(57deg, #00c6a7 0%, #1e4d92 100%);
+  -webkit-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-transform: skewY(-12deg);
+  transform: skewY(-12deg);
+}
+
+@media (min-width: 641px) {
+  .site-header::before {
+    height: 560px;
+  }
+}

@@ -22,8 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className}>
       <head />
-      <body className="bg-background text-foreground is-boxed has-animations">
-        <div className="body-wrap boxed-container">
+      <body className="bg-background text-foreground is-boxed has-animations boxed-container">
+        <div className="body-wrap ">
           <main className="min-h-screen flex flex-col items-center">
             {children}
           </main>

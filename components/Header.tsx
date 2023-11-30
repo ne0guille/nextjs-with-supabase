@@ -2,10 +2,10 @@ export default function Header() {
   return (
     <div className="flex flex-col gap-16 items-center">
       <div className="flex gap-8 justify-center items-center"></div>
-      <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
+      <p className="text-4xl lg:text-5xl !leading-tight mx-auto max-w-xl text-center text-white">
         Stuck in tutorial hell? We'll help you break out.
       </p>
-      <p className="text-lg lg:text-xl !leading-tight mx-auto max-w-xl text-center">
+      <p className="text-lg lg:text-xl !leading-tight mx-auto max-w-xl text-center text-slate-100">
         Learn, code, and launch real features with real docs, no videos needed!
       </p>
       <button
