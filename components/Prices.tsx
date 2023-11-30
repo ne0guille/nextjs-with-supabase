@@ -23,7 +23,7 @@ export default function Prices() {
         </div>
         <div className="flex flex-wrap -m-4">
           <div className="p-4 xl:w-1/2 md:w-1/2 w-full">
-            <div className="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden hover:border-blue-600">
+            <div className="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden transition-all motion-safe:hover:scale-110">
               <h2 className="text-sm tracking-widest title-font mb-1 font-medium">
                 Monthly plan
               </h2>
@@ -83,7 +83,7 @@ export default function Prices() {
                 Access to private Discord channel.
               </p>
               <button
-                className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-500 rounded"
+                className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-500 rounded button-primary"
                 onClick={() => goToWaitList("monthly")}
               >
                 Buy now
@@ -102,7 +102,7 @@ export default function Prices() {
             </div>
           </div>
           <div className="p-4 xl:w-1/2 md:w-1/2 w-full">
-            <div className="h-full p-6 rounded-lg border-2 border-blue-500 flex flex-col relative overflow-hidden">
+            <div className="h-full p-6 rounded-lg border-2 border-blue-500 flex flex-col relative overflow-hidden transition-all motion-safe:hover:scale-110">
               <span className="bg-blue-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">
                 POPULAR
               </span>
@@ -181,7 +181,7 @@ export default function Prices() {
                 Personalized support from our experts to track your progress.
               </p>
               <button
-                className="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded"
+                className="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded button-secondary"
                 onClick={() => goToWaitList("annual")}
               >
                 Buy now

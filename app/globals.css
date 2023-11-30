@@ -76,3 +76,22 @@ html {
     height: 560px;
   }
 }
+
+.button-primary {
+  color: hsl(var(--foreground));
+  transition: background 0.2s ease;
+  background: linear-gradient(65deg, #00a2b8 -25%, #00cfeb 100%);
+  color: white;
+}
+
+.button-primary:hover {
+  background: linear-gradient(65deg, #00a4b0 -25%, #00d1e0 100%);
+}
+
+.button-secondary {
+  transition: background 0.2s ease;
+  background: linear-gradient(65deg, #00a9f9 -25%, #00f9d2 100%);
+}
+.button-secondary:hover {
+  background: linear-gradient(65deg, #00a0f0 -25%, #00f9d2 100%);
+}
