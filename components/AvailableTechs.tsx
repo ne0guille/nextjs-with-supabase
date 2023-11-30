@@ -1,6 +1,6 @@
 export default function AvailableTechs() {
   return (
-    <section className="clients section">
+    <section className="clients section mt-8">
       <div className="flex flex-wrap w-full my-4 flex-col items-center text-center">
         <h1 className="sm:text-4xl text-3xl font-medium title-font text-gray-900">
           Use your favourite framework
