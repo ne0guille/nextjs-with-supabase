@@ -71,12 +71,6 @@ html {
   transform: skewY(-12deg);
 }
 
-@media (min-width: 641px) {
-  .site-header::before {
-    height: 560px;
-  }
-}
-
 .button-primary {
   color: hsl(var(--foreground));
   transition: background 0.2s ease;
@@ -94,4 +88,58 @@ html {
 }
 .button-secondary:hover {
   background: linear-gradient(65deg, #00a0f0 -25%, #00f9d2 100%);
+}
+
+.h_iframe iframe {
+  width: 100%;
+  height: 100%;
+}
+.h_iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.clients {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+@media (min-width: 641px) {
+  .h_iframe iframe {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .h_iframe {
+    max-width: 650px;
+    height: 100%;
+    width: 100%;
+    max-height: 400px;
+  }
+
+  .site-header::before {
+    height: 560px;
+  }
+  .clients {
+    .section-inner {
+      padding-top: 1rem;
+    }
+
+    ul {
+      justify-content: space-around;
+    }
+
+    li {
+      width: auto;
+    }
+  }
 }

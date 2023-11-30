@@ -22,13 +22,16 @@ export default function Features() {
             To complete a challenge, you'll need to follow some steps. We'll be
             there to help you along the way.
           </p>
-          <iframe
-            src={url}
-            width="640"
-            height="360"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+
+          <div className="h_iframe">
+            <iframe
+              src={url}
+              width="640"
+              height="360"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
         <div className="flex flex-wrap -m-4">
           <div className="xl:w-1/3 md:w-1/2 p-4">
