@@ -1,6 +1,16 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function Prices() {
+  const router = useRouter();
+
+  const goToWaitList = (plan: "monthly" | "annual") => {
+    router.push(`/waitlist?plan=${plan}`);
+  };
+
   return (
-    <section className="text-gray-600 body-font overflow-hidden">
+    <section id="plans" className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-8 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">
@@ -72,7 +82,10 @@ export default function Prices() {
                 </span>
                 Access to private Discord channel.
               </p>
-              <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-500 rounded">
+              <button
+                className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-500 rounded"
+                onClick={() => goToWaitList("monthly")}
+              >
                 Buy now
                 <svg
                   fill="none"
@@ -167,7 +180,10 @@ export default function Prices() {
                 </span>
                 Personalized support from our experts to track your progress.
               </p>
-              <button className="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded">
+              <button
+                className="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded"
+                onClick={() => goToWaitList("annual")}
+              >
                 Buy now
                 <svg
                   fill="none"

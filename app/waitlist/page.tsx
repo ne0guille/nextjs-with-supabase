@@ -5,16 +5,16 @@ import { redirect } from "next/navigation";
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { message: string };
+  searchParams: { message: string; plan: string };
 }) {
   const joinWaitlist = async (formData: FormData) => {
     "use server";
-
-    const origin = headers().get("origin");
+    const { plan } = searchParams || {};
     const email = formData.get("email") as string;
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
-    const { error } = await supabase.from("waitlist").insert({ email });
+    console.log({ email, plan });
+    const { error } = await supabase.from("waitlist").insert({ email, plan });
 
     if (error) {
       if (error.code === "23505") {
