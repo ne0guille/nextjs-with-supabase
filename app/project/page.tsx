@@ -51,12 +51,12 @@ export default async function Page({
       </Link>
       <section>
         <h1>preview</h1>
-        <iframe
+        {/* <iframe
           src="http://localhost:3000"
           frameBorder="0"
           width="100%"
           height="500px"
-        ></iframe>
+        ></iframe> */}
       </section>
     </div>
   );
