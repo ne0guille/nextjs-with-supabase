@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextApiRequest, NextApiResponse } from "next";
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const query = req.body;
   //   const completition = await openai.completions.create({
   //     model: "text-davinci-003", // gpt-3.5-turbo-1106
