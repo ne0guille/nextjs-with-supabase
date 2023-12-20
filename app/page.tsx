@@ -8,6 +8,8 @@ import AvailableTechs from "@/components/AvailableTechs";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
+import NavLinks from "@/components/NavLinks";
+
 export default async function Index({
   searchParams,
 }: {
@@ -40,6 +42,7 @@ export default async function Index({
     <div className="flex-1 w-full flex flex-col gap-20 items-center site-header">
       <div className="animate-in flex-1 flex flex-col gap-16 opacity-0 max-w-4xl px-3">
         <Header searchParams={searchParams} joinWaitlist={joinWaitlist} />
+        <NavLinks />
         <AvailableTechs />
         <div className="flex-1 flex flex-col gap-6">
           <Features />

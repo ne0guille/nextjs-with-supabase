@@ -1,0 +1,76 @@
+{
+  "challenge": "Todo App",
+  "description": "test",
+  "tasks": [
+    {
+      "id": "1",
+      "name": "Environment set up",
+      "description": "Clone the repo or create a new one. \n Install the dependencies and run the app.",
+      "isComplete": true,
+      "documentation": ["https://react.dev/learn/start-a-new-react-project"],
+      "difficulty": "easy",
+      "difficultyLevel": 1,
+      "estimateMinutes": [5]
+    },
+    {
+      "id": "2",
+      "name": "Design Component Hierarchy",
+      "description": "Establish a clear component structure for the app.\n Keep it simple by starting with the main components: `TodoForm`, `TodoList`, `TodoItem`",
+      "isComplete": false,
+      "documentation": ["https://react.dev/learn/thinking-in-react"],
+      "difficulty": "easy",
+      "difficultyLevel": 1,
+      "estimateMinutes": [5, 10]
+    },
+    {
+      "id": "3",
+      "name": "TodoList Component",
+      "description": "Implement TodoList component that will render the list of items./n Ensure keys are used correctly for list items to help React identify which items have changed.",
+      "isComplete": false,
+      "documentation": ["test"],
+      "difficulty": "easy",
+      "difficultyLevel": 1,
+      "estimateMinutes": [5, 10]
+    },
+    {
+      "id": "4",
+      "name": "TodoItem Component ",
+      "description": "Create TodoItem component that receives props and displays the content",
+      "isComplete": false,
+      "documentation": ["test"],
+      "difficulty": "easy",
+      "difficultyLevel": 1,
+      "estimateMinutes": [5, 10]
+    },
+    {
+      "id": "5",
+      "name": "New Todo Functionality",
+      "description": "Create component with a form to add new todos",
+      "isComplete": false,
+      "documentation": ["test"],
+      "difficulty": "medium",
+      "difficultyLevel": 2,
+      "estimateMinutes": [10, 20]
+    },
+    {
+      "id": "6",
+      "name": "Update Todo Functionality",
+      "description": "Add functionality to toggle the completion status of todos",
+      "isComplete": false,
+      "documentation": ["test"],
+      "difficulty": "medium",
+      "difficultyLevel": 2,
+      "estimateMinutes": [10, 20]
+    },
+    {
+      "id": "7",
+      "name": "Remove Todo Functionality",
+      "description": "Allow removal of todos from the list",
+      "isComplete": false,
+      "documentation": ["test"],
+      "difficulty": "medium",
+      "difficultyLevel": 2,
+      "estimateMinutes": [10, 20]
+    }
+  ]
+}

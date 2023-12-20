@@ -2,33 +2,18 @@ import Link from "next/link";
 import { headers, cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
+
+import { Container } from "rsuite";
+
+import { ProjectTaskContainer } from "@/components/ProjectTaskContainer";
+
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { message: string; plan: string };
+  searchParams: { task: string };
 }) {
-  //   const joinWaitlist = async (formData: FormData) => {
-  //     "use server";
-  //     const { plan } = searchParams || {};
-  //     const email = formData.get("email") as string;
-  //     const cookieStore = cookies();
-  //     const supabase = createClient(cookieStore);
-  //     console.log({ email, plan });
-  //     const { error } = await supabase.from("waitlist").insert({ email, plan });
-
-  //     if (error) {
-  //       if (error.code === "23505") {
-  //         return redirect("/waitlist?message=You are already on the waitlist");
-  //       }
-  //       console.log(error);
-  //       return redirect("/waitlist?message=Could not join waitlist, try again");
-  //     }
-
-  //     return redirect("/waitlist?message=Thanks for joining, we'll be in touch");
-  //   };
-
   return (
-    <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
+    <Container className="gap-4">
       <Link
         href="/"
         className="absolute left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
@@ -49,15 +34,7 @@ export default async function Page({
         </svg>{" "}
         Back
       </Link>
-      <section>
-        <h1>preview</h1>
-        {/* <iframe
-          src="http://localhost:3000"
-          frameBorder="0"
-          width="100%"
-          height="500px"
-        ></iframe> */}
-      </section>
-    </div>
+      <ProjectTaskContainer />
+    </Container>
   );
 }

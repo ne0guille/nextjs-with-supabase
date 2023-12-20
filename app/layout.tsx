@@ -1,8 +1,11 @@
 import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import toast, { Toaster } from "react-hot-toast";
+
 config.autoAddCss = false;
+
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "rsuite/dist/rsuite.min.css";
 import "./globals.css";
 
@@ -28,6 +31,7 @@ export default function RootLayout({
         <div className="body-wrap ">
           <main className="min-h-screen flex flex-col items-center">
             {children}
+            <Toaster position={"top-right"} />
             <Analytics />
           </main>
         </div>
