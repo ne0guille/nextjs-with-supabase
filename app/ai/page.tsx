@@ -12,7 +12,6 @@ export default async function Page({
   //   );
   //   const { pending } = useFormStatus();
   //   console.log("pending", pending);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch("http://localhost:3000/api/codeclimate");
   const sonarData = await response.json(); // TODO parse response on server
   console.log(sonarData);
