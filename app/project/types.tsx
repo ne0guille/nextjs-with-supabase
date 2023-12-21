@@ -11,10 +11,15 @@ export type Project = {
   videoUrl?: string;
   tasks?: string[];
 };
+export type ProjectPreview = Pick<
+  Project,
+  "id" | "name" | "description" | "level"
+>;
 
 export type ProjectLevel = "beginner" | "intermediate" | "advanced";
 
 export type ProjectTask = {
+  id: string;
   name: string;
   description: string;
   isComplete: boolean;

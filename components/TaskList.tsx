@@ -24,8 +24,6 @@ type TaskListProps = {
   activeTaskId: string;
   isCompleted: boolean;
   onSelected: (id: string) => void;
-  onCompleted: (id: string) => void;
-  // onCheck: (task: ChallengeTasks) => void;
 };
 const TasksHeader = ({
   name = "Task",
@@ -41,7 +39,7 @@ const TasksHeader = ({
   return (
     <Stack justifyContent="space-between">
       <span>{name}</span>
-      <span>{estimateMinutes.join("-")}</span>
+      <span className="whitespace-nowrap">{estimateMinutes.join("-")}</span>
     </Stack>
   );
 };
@@ -53,7 +51,6 @@ export const TaskList: React.FC<TaskListProps> = ({
   activeTaskId,
   isActive,
   onSelected,
-  onCompleted,
 }) => {
   return (
     <>

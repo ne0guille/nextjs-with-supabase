@@ -5,23 +5,27 @@ import {
   faClock,
   faQuestionCircle,
   faInfoCircle,
+  faRefresh,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Markdown from "markdown-to-jsx";
+
 import { useDrawerContext } from "@/context/DrawerContext";
-import { ChallengePanel } from "./ChallengePanel";
+import { ProjectTask } from "@/app/project/types";
 
 export const TaskFooter: React.FC<{
-  activeTasks: string[];
+  activeTask: ProjectTask;
   tasks: any;
-}> = ({ activeTasks, tasks }) => {
+  documentation: any;
+  onCompleted: (id: string) => void;
+}> = ({ activeTask, tasks, documentation, onCompleted }) => {
   const [timer, setTimer] = useState(590);
-  const { isOpen, handleOpen, setDrawerContent } = useDrawerContext();
+  const { handleOpen, setDrawerContent } = useDrawerContext();
   // Function to handle completing tasks
-  const completeAllTasks = () => {
-    // Add your logic to mark all tasks as complete
-  };
+  // const completeAllTasks = () => {
+  //   // Add your logic to mark all tasks as complete
+  // };
 
-  // Effect to update the timer every second
   useEffect(() => {
     const interval = setInterval(() => {
       setTimer((prevTimer) => prevTimer + 1);
@@ -46,49 +50,55 @@ export const TaskFooter: React.FC<{
   };
 
   const handleHelp = () => {
-    // Add your logic to open the help drawer
     // open IA assistant component with instructions ?
     setDrawerContent(<div>Help Content</div>);
     handleOpen();
   };
 
   const handleInfo = () => {
-    // Add your logic to open the help drawer
-    // display info about the project/ tasks
-    console.log(tasks);
-    debugger;
-    setDrawerContent(<pre>{JSON.stringify(tasks)}</pre>);
+    setDrawerContent(
+      <article className="prose lg:prose-xl">
+        <Markdown>{documentation}</Markdown>
+      </article>
+    );
     handleOpen();
   };
 
   return (
-    <div className="flex items-center justify-between ">
+    <div className="flex items-center justify-between text-sm">
       <div>
-        <strong>Current Task:</strong> {activeTasks[0]}
+        <strong>Current Task:</strong> {activeTask?.name}
       </div>
       <div className="flex items-center space-x-4">
-        <div>
-          <FontAwesomeIcon icon={faClock} className="mr-2" />
+        <div className="flex items-center">
+          <FontAwesomeIcon icon={faClock} className="mr-2 text-lg" />
           <span>{formatTimer()}</span>
         </div>
-        <button className="flex items-center p-2 rounded-full bg-gray-300">
-          <FontAwesomeIcon
-            icon={faQuestionCircle}
-            className="text-gray-600"
-            onClick={() => handleHelp()}
-          />
+        <button
+          className="flex items-center p-0.5 text-xl rounded-full bg-gray-300"
+          onClick={() => handleHelp()}
+        >
+          <FontAwesomeIcon icon={faQuestionCircle} className="text-gray-600" />
         </button>
-        <button className="flex items-center p-2 rounded-full bg-gray-300">
-          <FontAwesomeIcon
-            icon={faInfoCircle}
-            className="text-gray-600"
-            onClick={() => handleInfo()}
-          />
+        <button
+          className="flex items-center p-0.5 text-xl rounded-full bg-gray-300"
+          onClick={() => handleInfo()}
+        >
+          <FontAwesomeIcon icon={faInfoCircle} className="text-gray-600" />
         </button>
+        {/* // todo add reset icon to reset timer */}
+        <button
+          className="flex items-center p-0.5 text-xl rounded-full hover:scale-110"
+          onClick={() => handleInfo()}
+        >
+          <FontAwesomeIcon icon={faRefresh} className="text-white" />
+        </button>
+        {/* <i class="fa-regular fa-circle-pause"></i> */}
 
         <button
-          className="flex items-center px-3 py-2 bg-blue-500 text-white rounded"
-          onClick={completeAllTasks}
+          className="flex items-center px-3 py-2 bg-blue-500 text-white rounded disabled:opacity-75"
+          disabled={!activeTask}
+          onClick={() => onCompleted(activeTask?.id)}
         >
           Complete Task
         </button>
