@@ -8,7 +8,7 @@ export interface PostMetadata {
   slug: string;
   level?: string;
 }
-export const getPostContent = (slug: string) => {
+export const getProjectContent = (slug: string) => {
   const folder = "documentation/";
   const file = `${folder}${slug}.md`;
   const content = fs.readFileSync(file, "utf8");
@@ -16,7 +16,7 @@ export const getPostContent = (slug: string) => {
   return matterResult;
 };
 
-const getPostMetadata = (): PostMetadata[] => {
+const getProjectMetadata = (): PostMetadata[] => {
   const folder = "documentation/";
   const files = fs.readdirSync(folder);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
@@ -36,4 +36,4 @@ const getPostMetadata = (): PostMetadata[] => {
   return documentations;
 };
 
-export default getPostMetadata;
+export default getProjectMetadata;

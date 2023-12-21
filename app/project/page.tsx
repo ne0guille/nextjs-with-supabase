@@ -6,14 +6,14 @@ import { Container } from "rsuite";
 import Markdown from "markdown-to-jsx";
 
 import { ProjectTaskContainer } from "@/components/ProjectTaskContainer";
-import { getPostContent } from "@/components/getPostMetadata";
+import { getProjectContent } from "@/components/getProjectMetadata";
 
 export default async function Page({
   searchParams,
 }: {
   searchParams: { task: string };
 }) {
-  const post = getPostContent("gpt");
+  const post = getProjectContent("gpt");
   return (
     <Container className="gap-4">
       <Link

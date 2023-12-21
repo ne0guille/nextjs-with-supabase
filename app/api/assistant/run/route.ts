@@ -17,11 +17,11 @@ export async function POST(req: NextRequest) {
 
     // check if the fields are empty
     if (!threadId || !assistantId || !instructions) {
-      return Response.json(
+      return NextResponse.json(
         { message: "Please fill in all fields" },
         { status: 400 }
       );
-      // return Response.redirect("/?error=Please fill in all fields");
+      // return NextResponse.redirect("/?error=Please fill in all fields");
     }
 
     const assistantData: AssistantRunProps = {
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
 
     assistant = await runAssistant(assistantData);
   } catch (error: any) {
-    return Response.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
   // save the data to the database
   //   asst_QyBXxWsyL5yANZZ0uoxDfy0S

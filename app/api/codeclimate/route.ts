@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 const codeClimateAPIUrl = "https://api.codeclimate.com/v1";
 const authsonarCloudAPIUrl =
@@ -35,7 +36,7 @@ export async function GET(req: NextRequest) {
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
-      return Response.json({ data: error });
+      return NextResponse.json({ data: error });
     });
   const importantIssues = response?.data?.filter((issue: any) => {
     return (
@@ -52,5 +53,5 @@ export async function GET(req: NextRequest) {
   });
 
   console.log("response", importantIssues);
-  return Response.json({ data: importantIssues });
+  return NextResponse.json({ data: importantIssues });
 }

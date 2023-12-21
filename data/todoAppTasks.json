@@ -24,7 +24,7 @@
     },
     {
       "id": "3",
-      "name": "TodoList Component",
+      "name": "Display List of Todos",
       "description": "Implement TodoList component that will render the list of items./n Ensure keys are used correctly for list items to help React identify which items have changed.",
       "isComplete": false,
       "documentation": ["test"],
@@ -45,7 +45,7 @@
     {
       "id": "5",
       "name": "New Todo Functionality",
-      "description": "Create component with a form to add new todos",
+      "description": "Create a form in the TodoForm component to add new todos",
       "isComplete": false,
       "documentation": ["test"],
       "difficulty": "medium",
@@ -55,7 +55,7 @@
     {
       "id": "6",
       "name": "Update Todo Functionality",
-      "description": "Add functionality to toggle the completion status of todos",
+      "description": "Allow users to mark todos as complete",
       "isComplete": false,
       "documentation": ["test"],
       "difficulty": "medium",
@@ -65,12 +65,22 @@
     {
       "id": "7",
       "name": "Remove Todo Functionality",
-      "description": "Allow removal of todos from the list",
+      "description": "Enable the deletion of todos from the list",
       "isComplete": false,
       "documentation": ["test"],
       "difficulty": "medium",
       "difficultyLevel": 2,
-      "estimateMinutes": [10, 20]
+      "estimateMinutes": [15, 20]
+    },
+    {
+      "id": "8",
+      "name": "Add Style",
+      "description": "Add CSS styling to the app for better visual appeal",
+      "isComplete": false,
+      "documentation": ["test"],
+      "difficulty": "easy",
+      "difficultyLevel": 2,
+      "estimateMinutes": [15, 20]
     }
   ]
 }

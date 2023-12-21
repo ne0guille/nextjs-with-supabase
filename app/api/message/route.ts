@@ -3,7 +3,6 @@ import {
   createMessage,
   getMessages,
 } from "@/app/ai/actions";
-import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -16,11 +15,11 @@ export async function POST(req: NextRequest) {
 
     // check if the fields are empty
     if (!threadId || !content) {
-      return Response.json(
+      return NextResponse.json(
         { message: "Please fill in all fields" },
         { status: 400 }
       );
-      // return Response.redirect("/?error=Please fill in all fields");
+      // return NextResponse.redirect("/?error=Please fill in all fields");
     }
     const newMessageData: AssistantMessageProps = {
       threadId,
@@ -29,7 +28,7 @@ export async function POST(req: NextRequest) {
 
     newMessage = await createMessage(newMessageData);
   } catch (error: any) {
-    return Response.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
   // save the data to the database
   //   asst_QyBXxWsyL5yANZZ0uoxDfy0S
@@ -43,16 +42,16 @@ export async function GET(req: NextRequest) {
     const query = searchParams.get("threadId");
     //check if the fields are empty
     if (!query) {
-      return Response.json(
+      return NextResponse.json(
         { message: "ThreadId is required" },
         { status: 400 }
       );
-      // return Response.redirect("/?error=Please fill in all fields");
+      // return NextResponse.redirect("/?error=Please fill in all fields");
     }
     const thread = await getMessages(query);
     return NextResponse.json({ data: thread });
   } catch (error: any) {
-    return Response.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
 

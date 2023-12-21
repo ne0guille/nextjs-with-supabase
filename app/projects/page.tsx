@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { Container } from "rsuite";
 
-import getPostMetadata from "@/components/getPostMetadata";
+import getProjectMetadata from "@/components/getProjectMetadata";
 import { ProjectPreviewList } from "@/components/ProjectPreviewList";
 import { ProjectPreview } from "../project/types";
 
@@ -13,7 +13,7 @@ export default async function Page({
 }: {
   searchParams: { task: string };
 }) {
-  const postMetadata = getPostMetadata();
+  const postMetadata = getProjectMetadata();
 
   const mappedProjects = postMetadata.map((project) => {
     return {

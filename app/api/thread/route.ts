@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     // thread_H1bXYupqpdwzi1zKxpwMIkBS
     return NextResponse.json({ data: newThread });
   } catch (error: any) {
-    return Response.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
 
@@ -18,15 +18,15 @@ export async function GET(req: NextRequest) {
     const threadId = searchParams.get("threadId");
     //check if the fields are empty
     if (!threadId) {
-      return Response.json(
+      return NextResponse.json(
         { message: "ThreadId is required" },
         { status: 400 }
       );
-      // return Response.redirect("/?error=Please fill in all fields");
+      // return NextResponse.redirect("/?error=Please fill in all fields");
     }
     const thread = await getThread(threadId);
     return NextResponse.json({ data: thread });
   } catch (error: any) {
-    return Response.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
