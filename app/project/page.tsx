@@ -3,7 +3,6 @@ import { headers, cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { Container } from "rsuite";
-import Markdown from "markdown-to-jsx";
 
 import { ProjectTaskContainer } from "@/components/ProjectTaskContainer";
 import { getProjectContent } from "@/components/getProjectMetadata";
@@ -13,7 +12,7 @@ export default async function Page({
 }: {
   searchParams: { task: string };
 }) {
-  const post = getProjectContent("gpt");
+  const post = getProjectContent("todo-app");
   return (
     <Container className="gap-4">
       <Link
@@ -36,6 +35,7 @@ export default async function Page({
         </svg>{" "}
         Back
       </Link>
+
       <ProjectTaskContainer documentation={post.content} />
     </Container>
   );

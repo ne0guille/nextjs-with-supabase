@@ -60,6 +60,14 @@ export const TaskList: React.FC<TaskListProps> = ({
       </Stack>
 
       <List bordered>
+        <List.Item key={"overview"} onClick={() => onSelected("overview")}>
+          <TasksHeader
+            name={"Project ovewview"}
+            estimateMinutes={[5]}
+            isChecked={false}
+            isActive={isActive}
+          />
+        </List.Item>
         {tasks.map((task) => (
           <List.Item
             key={task.id}

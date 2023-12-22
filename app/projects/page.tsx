@@ -7,6 +7,7 @@ import { Container } from "rsuite";
 import getProjectMetadata from "@/components/getProjectMetadata";
 import { ProjectPreviewList } from "@/components/ProjectPreviewList";
 import { ProjectPreview } from "../project/types";
+import { ProjectHeader } from "@/components/ProjectHeader";
 
 export default async function Page({
   searchParams,
@@ -45,6 +46,7 @@ export default async function Page({
         </svg>{" "}
         Back
       </Link>
+      <ProjectHeader title={"Project & Challenge list"} />
       <ProjectPreviewList projects={mappedProjects} />
     </Container>
   );

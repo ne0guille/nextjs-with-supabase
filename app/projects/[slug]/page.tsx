@@ -2,6 +2,7 @@ import fs from "fs";
 import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import getProjectMetadata from "@/components/getProjectMetadata";
+import { ProjectHeader } from "@/components/ProjectHeader";
 
 const getProjectContent = (slug: string) => {
   const folder = "documentation/";
@@ -21,11 +22,7 @@ const PostPage = (props: any) => {
   const post = getProjectContent(slug);
   return (
     <div>
-      <div className="my-12 text-center">
-        <h1 className="text-2xl text-slate-600 ">{post.data.title}</h1>
-        <p className="text-slate-400 mt-2">{post.data.date}</p>
-      </div>
-
+      <ProjectHeader title={post.data.title} />
       <article className="prose">
         <Markdown>{post.content}</Markdown>
       </article>

@@ -1,11 +1,12 @@
 "use client";
 
-import { Container, Header, Content, Footer, Sidebar } from "rsuite";
+import { Container, Content, Footer, Sidebar } from "rsuite";
 import { TaskFooter } from "@/components/TaksFooter";
-import { TaskDetails } from "./TaskDetails";
 import TodoTaskData from "@/data/todoAppTasks.json";
 import { useState } from "react";
 import { TaskList } from "./TaskList";
+import Markdown from "markdown-to-jsx";
+import { ProjectHeader } from "./ProjectHeader";
 const mockedChallenge: any = TodoTaskData;
 
 export const ProjectTaskContainer = ({
@@ -44,10 +45,12 @@ export const ProjectTaskContainer = ({
         </div>
       </Sidebar>
       <Container>
-        <Header className="justify-center">Todo App</Header>
         <Content className="flex justify-center w-full items-start bg-white">
           <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md md:max-w-2xl justify-center gap-2">
-            <TaskDetails task={activeTask} />
+            <ProjectHeader title={mockedChallenge.challenge} />
+            <article className="prose">
+              <Markdown>{documentation}</Markdown>
+            </article>
           </div>
         </Content>
         <Footer className=" bottom-0 w-full bg-gray-800 text-white p-4">
